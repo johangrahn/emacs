@@ -14,7 +14,8 @@
   (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
 
   (set-frame-font "Office Code Pro D Light 15")
-)
+	(setq split-height-threshold nil) ;; prefer splitting vertically
+	(setq split-width-threshold 0))
 
 (use-package move-text
    :ensure t
