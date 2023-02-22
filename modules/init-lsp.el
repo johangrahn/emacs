@@ -19,6 +19,8 @@
 	(lsp-modeline-diagnostics-enable nil)
 	(lsp-ui-sideline-enable t)
   (tab-width 2)
+	(js-indent-level 2)
+	(add-hook 'js2-mode-hook 'lsp)
   (lsp-restart 'auto-restart))
 
 (defun lsp-save-hooks ()
@@ -35,7 +37,7 @@
 	(lsp-ui-peek-enable t)
   (lsp-ui-sideline-show-hover nil)
   (lsp-ui-doc-enable nil)
-	(lsp-ui-sideline-show-code-actions t)
+	(lsp-ui-sideline-show-code-actions nil)
 	(lsp-ui-sideline-show-diagnostics nil))
 
 (use-package flycheck
