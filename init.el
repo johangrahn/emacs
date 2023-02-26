@@ -34,13 +34,20 @@
 ;; display column number in mode line
 (column-number-mode 1)
 
-(setq tab-width 2)
-(setq indent-tabs-mode nil)
+(setq-default tab-width 2)
+(setq-default indent-tabs-mode nil)
+(setq-default js-indent-level 2)
+(setq-default standard-indent 2) ;; For eglot to behave properly with indent
+
 (setq mode-require-final-newline t)
 (global-linum-mode)
 (setq-default fill-column 80) ;; M-q should fill at 80 chars, not 75
 (global-visual-line-mode t)
 (setq-default word-wrap t)
+
+;; indentation
+(setq-default indent-tabs-mode nil)
+(setq-default default-tab-width 2)
 
 (setq custom-file (locate-user-emacs-file "custom.el"))
 
@@ -49,7 +56,11 @@
 (require 'init-theme)
 (require 'init-vertico)
 (require 'init-project)
-(require 'init-lsp)
 (require 'init-rustic)
-(require 'init-autocomplete)
+(require 'init-magit)
+(require 'init-eglot)
+(require 'init-corfu)
+(require 'init-js)
+
+;;(require 'init-autocomplete)
 (provide 'init)
