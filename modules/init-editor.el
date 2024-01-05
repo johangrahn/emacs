@@ -13,7 +13,13 @@
   (add-to-list 'default-frame-alist '(ns-appearance . dark))
   (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
 
-  (set-frame-font "Office Code Pro D Light 15")
+  (set-frame-font "Hack 13")
+  ;; (set-frame-font "Monaspace Neon 13")
+  ;; (set-frame-font "Roboto 13")
+  ;; (set-frame-font "Inconsolata 15")
+  ;; (set-face-attribute 'default nil :height 140)
+  ;; (set-face-attribute 'default nil :font "Inconsolata-14")
+  (prettify-symbols-mode t)
 	(setq split-height-threshold nil) ;; prefer splitting vertically
 	(setq split-width-threshold 0))
 
@@ -42,6 +48,7 @@
   (yas-reload-all))
 
 (use-package smartparens
+  :ensure t
   :config
   (smartparens-global-mode))
 
@@ -56,9 +63,33 @@
             (eyebrowse-mode t)
             (setq eyebrowse-new-workspace t)))
 
+(use-package multiple-cursors
+  :bind
+  ("C->" . 'mc/mark-next-like-this)
+  ("C-<" . 'mc/mark-previous-like-this)
+  ("C-c C-<" . 'mc/mark-all-like-this))
+
+(use-package yafolding
+  :ensure t
+  :hook (
+         (js-mode . yafolding-mode)
+         (js2-mode . yafolding-mode)
+         (rustic-mode . yafolding-mode)
+         (rust-mode . yafolding-mode)))
 
 (setq-default indent-level 2)
 (setq-default js-indent-level 2)	      
 (setq-default indent-tabs-mode nil)
+
+(defun duplicate-line()
+  (interactive)
+  (move-beginning-of-line 1)
+  (kill-line)
+  (yank)
+  (open-line 1)
+  (next-line 1)
+  (yank)
+)
+(global-set-key (kbd "C-c d") 'duplicate-line)
 
 (provide 'init-editor)

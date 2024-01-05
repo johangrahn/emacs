@@ -40,7 +40,7 @@
 (setq-default standard-indent 2) ;; For eglot to behave properly with indent
 
 (setq mode-require-final-newline t)
-(global-linum-mode)
+(display-line-numbers-mode t)
 (setq-default fill-column 80) ;; M-q should fill at 80 chars, not 75
 (global-visual-line-mode t)
 (setq-default word-wrap t)

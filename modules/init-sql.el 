@@ -1,0 +1,7 @@
+(use-package sqlformat
+  :commands (sqlformat sqlformat-buffer sqlformat-region)
+  :hook (sql-mode . sqlformat-on-save-mode)
+  :init
+  (setq sqlformat-command 'sqlformat
+        sqlformat-args '("--indent_width" "2" "-s")))
+(provide 'init-sql)

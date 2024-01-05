@@ -58,4 +58,5 @@
     ;; since I have a light theme and dark theme I switch between. This has no
     ;; function unless you use something similar
     (add-hook 'kb/themes-hooks #'(lambda () (interactive) (kind-icon-reset-cache))))
+
 (provide 'init-corfu)
