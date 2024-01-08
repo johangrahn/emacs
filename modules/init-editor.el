@@ -13,7 +13,7 @@
   (add-to-list 'default-frame-alist '(ns-appearance . dark))
   (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
 
-  (set-frame-font "Hack 13")
+  (set-frame-font "Hack Nerd Font Mono 13")
   ;; (set-frame-font "Monaspace Neon 13")
   ;; (set-frame-font "Roboto 13")
   ;; (set-frame-font "Inconsolata 15")
